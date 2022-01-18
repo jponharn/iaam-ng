@@ -37,6 +37,8 @@ export class AppComponent implements OnInit {
             console.log(err)
         }
     }
+
+
     onLogout() {
         iaam.logout();
     }
