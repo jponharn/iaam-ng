@@ -2,6 +2,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
 
 ## Step1: Register Client
+Example of register client with Fetch:
 ````
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
