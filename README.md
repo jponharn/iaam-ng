@@ -60,6 +60,8 @@ In the main commponent, add initail IAAM script
 ```
 declare var iaam: any;
 
+
+// script on ngOnInit
 iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then((statuss) => {
     ...
 })

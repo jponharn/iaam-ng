@@ -13,10 +13,12 @@ export class AppComponent implements OnInit {
     access_token: any;
 
 
+    //initial IAAM on ngOnInit
     ngOnInit() {
         this.initIAAM();
     }
 
+    //init IAAM and authen flow
     initIAAM() {
         try {
             iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
@@ -38,7 +40,7 @@ export class AppComponent implements OnInit {
         }
     }
 
-
+    // logout function
     onLogout() {
         iaam.logout();
     }
