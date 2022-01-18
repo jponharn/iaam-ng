@@ -51,3 +51,14 @@ fetch("<IAAM_REGISER_API>", requestOptions)
 
 Run `ng serve --ssl` for a dev server. Navigate to `https://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Step2: Import IAAM SDK
+In the Angular project, insert script <script  src="https://iaamclient.iaam.cloud/iaamgw/libs/sdk/1.2/iaam.min.js" ></script> in index.html
+
+## Step3: init IAAM
+In the main commponent, add initail IAAM script
+```
+declare var iaam: any;
+```
+
+## Features
+- initLoginFlow(config)
