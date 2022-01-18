@@ -73,7 +73,7 @@ iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>
             ...
         }
         else {
-            iaam.login()
+            iaam.login();
         }
     })
 })
@@ -84,23 +84,33 @@ when logged in, you can get user profile and access_token
 iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
     iaam.isLoggedIn((loggedIn: Boolean) => {
         if (loggedIn) {
-            this.access_token = iaam.getAccessToken()
+            this.access_token = iaam.getAccessToken();
 
-            iaam.getProfile()
+            iaam.getProfile();
                 .then((profile: any) => {
-                    this.userProfile = profile
+                    this.userProfile = profile;
                 })
-
         }
         else {
-            iaam.login()
+            iaam.login();
         }
     })
 })
 ```
 
+### Logging out
+The logOut method clears the used token store from localStorage
+```
+iaam.logout()
+```
+
 ## Features
 - initLoginFlow(config)
+- isLoggedIn()
+- login()
+- getAccessToken()
+- getProfile
+- logout()
 
 
 ## Development server
