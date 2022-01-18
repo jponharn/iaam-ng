@@ -49,7 +49,7 @@ fetch("<IAAM_REGISER_API>", requestOptions)
 ```
 
 ## Step2: Integrating the IAAM SDK 
-You can embed the IAAM SDK in the the Angular project with CDN path, specify the URL of the LIFF SDK in the src attribute of the `<script>` element of the app's HTML source (index.html).
+You can embed the IAAM SDK in the the Angular project with CDN path, specify the URL of the IAAM SDK in the src attribute of the `<script>` element of the app's HTML source (index.html).
 
 Example of specifying a CDN edge path:
 
@@ -99,7 +99,7 @@ iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>
 ```
 
 ### Logging out
-The logOut method clears the used token store from localStorage
+The logOut method clears the used token store from `localStorage`
 ```
 iaam.logout()
 ```
@@ -109,7 +109,7 @@ iaam.logout()
 - isLoggedIn()
 - login()
 - getAccessToken()
-- getProfile
+- getProfile()
 - logout()
 
 
