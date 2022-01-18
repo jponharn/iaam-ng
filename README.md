@@ -55,10 +55,48 @@ Example of specifying a CDN edge path:
 
 ```<script  src="https://iaamclient.iaam.cloud/iaamgw/libs/sdk/1.2/iaam.min.js"></script>```
 
-## Step3: init IAAM
+## Step3: init IAAM & authen flow
 In the main commponent, add initail IAAM script
 ```
 declare var iaam: any;
+
+iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then((statuss) => {
+    ...
+})
+```
+
+check `loggedIn` status
+```
+iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
+    iaam.isLoggedIn((loggedIn: Boolean) => {
+        if (loggedIn) {
+            ...
+        }
+        else {
+            iaam.login()
+        }
+    })
+})
+```
+
+when logged in, you can get user profile and access_token
+```
+iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
+    iaam.isLoggedIn((loggedIn: Boolean) => {
+        if (loggedIn) {
+            this.access_token = iaam.getAccessToken()
+
+            iaam.getProfile()
+                .then((profile: any) => {
+                    this.userProfile = profile
+                })
+
+        }
+        else {
+            iaam.login()
+        }
+    })
+})
 ```
 
 ## Features
