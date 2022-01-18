@@ -47,8 +47,12 @@ fetch("<IAAM_REGISER_API>", requestOptions)
 }
 ```
 
-## Step2: Import IAAM SDK
-In the Angular project, insert script `<script  src="https://iaamclient.iaam.cloud/iaamgw/libs/sdk/1.2/iaam.min.js" ></script>` in index.html file
+## Step2: Integrating the IAAM SDK 
+You can embed the IAAM SDK in the the Angular project with CDN path, specify the URL of the LIFF SDK in the src attribute of the `<script>` element of the app's HTML source (index.html).
+
+Example of specifying a CDN edge path:
+
+```<script  src="https://iaamclient.iaam.cloud/iaamgw/libs/sdk/1.2/iaam.min.js"></script>```
 
 ## Step3: init IAAM
 In the main commponent, add initail IAAM script
