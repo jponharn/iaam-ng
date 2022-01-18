@@ -1,4 +1,5 @@
 # iaam-ng-demo
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
 
 ## Step1: Register Client
 ````
@@ -21,13 +22,30 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://iaamclient.iaam.cloud/api/register_client", requestOptions)
+fetch("<IAAM_REGISER_API>", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ````
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+### response schema
+```
+{
+    "status": "OK",
+    "message": "'Angular-Demo' registered successfully",
+    "data": {
+        "oxd_id": "",
+        "op_host": "",
+        "client_id": "",
+        "client_name": "",
+        "client_secret": "",
+        "client_registration_access_token": "",
+        "client_registration_client_uri": "",
+        "client_id_issued_at": 0,
+        "client_secret_expires_at": 0
+    }
+}
+```
 
 ## Development server
 
