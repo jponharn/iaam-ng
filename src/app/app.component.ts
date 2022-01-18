@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
     initIAAM() {
         try {
-            iaam.initLoginFlow({ iaamgw_host: "https://iaamclient.iaam.cloud", client_id: "6b749ebf-f9bd-4d0b-9ce2-88c6cc4a19fb" }).then(() => {
+            iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
                 iaam.isLoggedIn((loggedIn: Boolean) => {
                     if (loggedIn) {
                         this.access_token = iaam.getAccessToken()
