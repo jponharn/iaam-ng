@@ -70,7 +70,7 @@ iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>
 check `loggedIn` status
 ```
 iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
-    iaam.isLoggedIn((loggedIn: Boolean) => {
+    iaam.isLoggedIn((err:any, loggedIn: Boolean) => {
         if (loggedIn) {
             ...
         }
@@ -84,17 +84,21 @@ iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>
 when logged in, you can get user profile and access_token
 ```
 iaam.initLoginFlow({ iaamgw_host: "<IAAM_GATEWAY_HOST>", client_id: "<CLIENT_ID>" }).then(() => {
-    iaam.isLoggedIn((loggedIn: Boolean) => {
-        if (loggedIn) {
-            this.access_token = iaam.getAccessToken();
-
-            iaam.getProfile();
-                .then((profile: any) => {
-                    this.userProfile = profile;
-                })
+    iaam.isLoggedIn((err:any, loggedIn: Boolean) => {
+        if(!err){
+            if (loggedIn) {
+                this.access_token = iaam.getAccessToken()
+                iaam.getProfile()
+                    .then((profile: any) => {
+                        this.userProfile = profile
+                    })
+            }
+            else {
+                iaam.login()
+            }
         }
-        else {
-            iaam.login();
+        else{
+            // alert(err)
         }
     })
 })
